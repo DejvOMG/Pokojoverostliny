@@ -10,20 +10,20 @@ public class PlantManager {
     private List<Plant> plants = new ArrayList<>();
 
     public List<Plant> getPlantList() {
-        return new ArrayList<>(plants); // Vrátí kopii seznamu rostlin
+        return new ArrayList<>(plants); 
     }
 
     public void loadFromFile(String filename) throws PlantException, IOException {
         plants.clear();
         try (BufferedReader reader = Files.newBufferedReader(Path.of(filename))) {
             String line;
-            int lineNumber = 0;  // Pro sledování řádku, kde dojde k chybě
+            int lineNumber = 0;  
             while ((line = reader.readLine()) != null) {
                 lineNumber++;
                 String[] parts = line.split("\t");
                 if (parts.length != 5) {
                     System.out.println("Chybný formát na řádku " + lineNumber + ": očekává se 5 hodnot oddělených tabulátory.");
-                    continue;  // Přeskočí na další řádek
+                    continue;  
                 }
                 try {
                     String name = parts[0];
@@ -42,7 +42,7 @@ public class PlantManager {
         }
     }
 
-    // Ostatní metody pro správu seznamu rostlin
+   
     public void addPlant(Plant plant) {
         plants.add(plant);
     }
