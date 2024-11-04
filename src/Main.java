@@ -4,7 +4,7 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         try {
-            // Relativní cesty k souborům ve složce resources
+            
             String[] fileNames = {"resources/kvetiny.txt", "resources/kvetiny-spatne-datum.txt", "resources/kvetiny-spatne-frekvence.txt"};
 
             for (String fileName : fileNames) {
